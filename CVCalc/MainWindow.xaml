@@ -1,0 +1,68 @@
+﻿<Window x:Class="CVCalc.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Critical Value Calculator" Height="360" Width="360"
+        ResizeMode="NoResize">
+    <Grid Background="DimGray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15*" />
+            <RowDefinition Height="15*" />
+            <RowDefinition Height="15*" />
+            <RowDefinition Height="55*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40*" />
+            <ColumnDefinition Width="30*" />
+            <ColumnDefinition Width="30*" />
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="AlphaBox" 
+                 Grid.Row="0" Grid.Column="0" Margin="12,12,12,12"
+                 FontFamily="Times" FontSize="14"/>
+        <TextBlock Grid.Row="0" Grid.Column="1" Margin="0,15,0,15"
+                   FontFamily="Times" FontSize="14" FontWeight="ExtraBold">
+            α (alpha)
+        </TextBlock>
+        <TextBox x:Name="DFBox" 
+                 Grid.Row="1" Grid.Column="0" Margin="12,12,12,12"
+                 FontFamily="Times" FontSize="14"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Margin="0,5,0,5"
+                   FontFamily="Times" FontSize="14" FontWeight="ExtraBold"
+                   TextWrapping="Wrap">
+            Degrees of Freedom
+        </TextBlock>
+        <TextBox x:Name="DF2Box"
+                 Grid.Row="2" Grid.Column="0" Margin="12,12,12,12"
+                 FontFamily="Times" FontSize="14"/>
+        <TextBlock Grid.Row="2" Grid.Column="1" Margin="0,0,0,0"
+                   FontFamily="Times" FontSize="14" FontWeight="ExtraBold"
+                   TextWrapping="Wrap">
+            2nd Degree of Freedom (For F-Test)
+        </TextBlock>
+        <Button x:Name="TTestButton"
+                Grid.Row="0" Grid.Column="2" Margin="10,10,10,10"
+                Content="T-Test"
+                Click="TTestButton_Click"/>
+        <StackPanel Grid.Row="1" Grid.Column="2">
+            <RadioButton x:Name="LowerTailButton"
+                         FontFamily="Times" FontSize="12" FontWeight="ExtraBold"
+                         Content="Lower Tail" />
+            <RadioButton x:Name="UpperTailButton"
+                         FontFamily="Times" FontSize="12" FontWeight="ExtraBold"
+                         Content="Upper Tail" />
+            <RadioButton x:Name="TwoTailButton"
+                         FontFamily="Times" FontSize="12" FontWeight="ExtraBold"
+                         Content="Two Tail" />
+        </StackPanel>
+        <Button x:Name="FTestButton"
+                Grid.Row="2" Grid.Column="2" Margin="10,10,10,10"
+                Content="F-Test"
+                Click="FTestButton_Click"/>
+        <StackPanel Grid.Row="3" Grid.Column="0">
+            <TextBlock Margin="12,12,12,6"
+                       FontFamily="Times" FontSize="14" FontWeight="ExtraBold">
+                Result:
+            </TextBlock>
+            <TextBox x:Name="AnswerBox" Margin="12,0,12,0" />
+        </StackPanel>
+    </Grid>
+</Window>
